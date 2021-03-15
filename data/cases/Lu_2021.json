@@ -1,0 +1,19 @@
+{
+    "fuel":"hydrogen",
+    "mechanism":"hydrogen_Burke_N2.cti",
+    "reference":"Lu_2021_PCI",
+    "configuration":"planar",
+    "cases":{
+        "T-300_p-5_phi-0.6":[
+            {"ur": 5.0, "lr":1.0, "sr":9.49},
+            {"ur":20.0, "lr":1.0, "sr":13.25}
+        ],
+        "T-300_p-10_phi-0.6":[
+            {"ur": 2.0, "lr":1.0, "sr": 7.36, "sr_std":2.01},
+            {"ur": 5.0, "lr":1.0, "sr":12.04, "sr_std":2.03},
+            {"ur":10.0, "lr":1.0, "sr":16.51, "sr_std":2.33},
+            {"ur":15.0, "lr":1.0, "sr":23.17, "sr_std":4.45},
+            {"ur":20.0, "lr":1.0, "sr":30.31, "sr_std":3.65}
+        ]
+    }
+}
