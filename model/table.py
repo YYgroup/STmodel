@@ -3,7 +3,6 @@ import numpy as np
 import pyutils.filename as fn
 import pyutils.fig as fg
 import pyutils.ctutils.flame as ctf
-#import stmodels.data.mechanisms.select as ms
 import pyutils.ctutils.mechanisms.select as ms
 
 class OneDimTable():

@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import curve_fit
-import stmodels.data.cases as stc
-import stmodels.LASTFS.st as stm
+import STmodel.data.cases as stc
+import STmodel.model.st as stm
 
 # fit C0 for a set of data from a case
 # also calculate Ma, Le, Ze

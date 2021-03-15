@@ -2,8 +2,8 @@ import numpy as np
 import scipy.special as sp
 import pyutils.filename as fn
 import pyutils.ctutils.flame as ctf
-import stmodels.LASTFS.table as stt
 import pyutils.ctutils.mechanisms.select as ms
+import STmodel.model.table as stt
 
 class Model():
     

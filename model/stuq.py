@@ -1,7 +1,7 @@
 import numpy as np
 from scipy import stats
-import stmodels.data as std
-import stmodels.LASTFS.st as stm
+import STmodel.data as std
+import STmodel.model.st as stm
 
 def sample_params(npts, nstd_T=0.1, nstd_C=0.15):
 
