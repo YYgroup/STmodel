@@ -1,0 +1,14 @@
+{
+    "fuel":"methane",
+    "mechanism":"gri30.cti",
+    "reference":"Aspden_2017_PCI",
+    "configuration":"planar",
+    "cases":{
+        "T-298_p-1_phi-0.7":[
+            {"ur":1.00, "lr":1.0, "sr":1.40, "sr_std":0.20},
+            {"ur":2.52, "lr":1.0, "sr":1.87, "sr_std":0.35},
+            {"ur":5.25, "lr":1.0, "sr":3.48, "sr_std":0.98},
+            {"ur":10.9, "lr":1.0, "sr":3.42, "sr_std":1.13}
+        ]
+    }
+}

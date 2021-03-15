@@ -2,8 +2,8 @@
 
 import numpy as np
 import pyutils.fig as fg
-import STmodel.data.cases as stc
-import STmodel.model.st as stm
+import stmodels.data.cases as stc
+import stmodels.LASTFS.st as stm
 
 # %%
 
@@ -45,7 +45,7 @@ ax.errorbar(d.turbulence_intensity,
             capsize=3, capthick=1.5, elinewidth=1,
             label='DNS')
 
-ax.plot(ur_list, sr, '-', c='r',label='Model')
+ax.plot(ur_list, sr, '-', c='r', label='Model')
 
 ax.set_xlim(0, 21)
 ax.set_ylim(0, 40)
@@ -55,9 +55,9 @@ ax.set_yticks(np.linspace(0, 40, num=9))
 
 ax.legend(frameon=False)
 
-ax.text(5, 1,
+ax.text(10, 1,
         'Lu \& Yang, 2021\n'
-        +r'H$_2$/Air, $p=10\;\mathrm{atm}$, $\phi=0.6$')
+        +r'H$_2$/Air, $\phi=0.6$')
 
 ax.tick_params(which='major', direction='in', bottom=True, top=True, left=True, right=True)
 
