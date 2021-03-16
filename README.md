@@ -10,3 +10,5 @@ Model predictions:
 <p align="center">
 <img src="./assets/fig_st_predictions.png" width="500">
 </p>
+
+Usage can be found in /examples
