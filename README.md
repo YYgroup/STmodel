@@ -15,3 +15,5 @@ Model predictions for the 285 cases:
 <p align="center">
 <img src="./data/fig/fig_st_predictions.png" width="500">
 </p>
+
+Usage can be found in /examples
