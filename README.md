@@ -17,3 +17,6 @@ Model predictions for the 285 cases:
 </p>
 
 Usage can be found in /examples for hydrogen and methane cases
+
+# Cite
+Lu and Yang, A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, 2021, in preparation.
