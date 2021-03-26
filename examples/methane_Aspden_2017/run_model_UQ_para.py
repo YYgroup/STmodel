@@ -9,9 +9,12 @@ import STmodel.model.stuq as stu
 
 # %%
 
+## select case
 case = stc.case.CaseSet('Aspden_2017_methane')
 
 # %%
+
+## set points to make model predictions and grid for PDF in UQ
 
 nx = 50
 ny = 200
@@ -30,19 +33,26 @@ pdf = np.zeros((nx, ny))
 
 # %%
 
+## samples of model parameters for UQ
+
 A_s, B_s, T_s, C_s = stu.sample_params(1000)
 
 # %%
+
+## plot configurations
 
 config = fg.PlotConfig('manuscript_single')
 
 # %%
 
+## set the case
+
 unburnt = 'T-298_p-1_phi-0.7'
 data = case.get_case_data(unburnt)
 
+## get reactant object
 r = case.get_reactant(unburnt)
-
+## get model object
 mixture = stm.Model(r)
 
 # %%
@@ -101,3 +111,7 @@ ax.tick_params(which='major', direction='in', bottom=True, top=True, left=True, 
 
 ax.set_xlabel(r'$u^\prime/s_L^0$')
 ax.set_ylabel(r'$s_T/s_L^0$')
+
+# %%
+
+fig.savefig('fig_model_UQ_para_Aspden_2017.png',dpi=400)
