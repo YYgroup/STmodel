@@ -29,7 +29,7 @@ Please check the /examples folder for two cases of hydrogen and methane, compari
 
 steps:
 1. run driver_counterflow.py to get the laminar flame solutions for laminar flame parameters and stretch factor tabulation
-2. run run_model_st.py/run_model_UQ_para.py to get the model predictions and comparisons with data
+2. run run_model_st.py/run_model_UQ_para.py to get the model predictions and comparisons with data, you can also check the .ipynb file for notebook.
 
 Note: 
 The first run will take some time to do the laminar flame simulations and tabulation for a new condition. 
