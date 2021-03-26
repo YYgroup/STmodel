@@ -16,7 +16,21 @@ Model predictions for the 285 cases:
 <img src="./data/fig/fig_st_predictions.png" width="360">
 </p>
 
-Usage can be found in /examples for hydrogen and methane cases
+# Dependence
+cantera
+https://github.com/Cantera/cantera
+
+pyutils
+https://github.com/Combustion-Zhen/pyutils
+
+# Get start
+Please find expamples in /examples for two hydrogen and methane cases
+
+/examples/hydrogen_Lu_2021 contains full procedure to run the model
+1. run driver_counterflow.py to get the laminar flame solutions for laminar flame parameters and tabulation
+2. run run_model_st.py to get the model predictions and comparisons with data
+
+Note: The first run will take some time to do the laminar flame simulations and tabulation for a new condition. Then the necessary data are stored in laminar_info.npz and stretch_factor_table.npy files. Later calls of the model only take negligible time to do algebraic calculations.
 
 # Cite
-Zhen Lu and Yue Yang, A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, Combustion and Flame, 2021, submitted. [arXiv](https://arxiv.org/abs/2103.11337)
+Zhen Lu and Yue Yang, A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, Combustion and Flame, 2021, under review. [arXiv](https://arxiv.org/abs/2103.11337)
