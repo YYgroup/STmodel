@@ -17,18 +17,25 @@ Model predictions for the 285 cases:
 </p>
 
 # Dependence
-cantera
-https://github.com/Cantera/cantera
 
 pyutils
 https://github.com/Combustion-Zhen/pyutils
 
-# Get start
-Please check the /examples folder
+cantera
+https://github.com/Cantera/cantera
 
-/examples/hydrogen_Lu_2021 contains full procedure to run the model
-1. run driver_counterflow.py to get the laminar flame solutions for laminar flame parameters and tabulation
-2. run run_model_st.py to get the model predictions and comparisons with data
+numpy
+https://numpy.org/
+
+scipy
+https://www.scipy.org/
+
+# Get start
+Please check the /examples folder for two cases of hydrogen and methane, comparing between model predictions and DNS results.
+
+steps:
+1. run driver_counterflow.py to get the laminar flame solutions for laminar flame parameters and stretch factor tabulation
+2. run run_model_st.py/run_model_UQ_para.py to get the model predictions and comparisons with data
 
 Note: 
 The first run will take some time to do the laminar flame simulations and tabulation for a new condition. 
