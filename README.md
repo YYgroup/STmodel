@@ -18,17 +18,11 @@ Model predictions for the 285 cases:
 
 # Dependence
 
-pyutils
+[pyutils](https://github.com/Combustion-Zhen/pyutils)
+a package including interfaces for I/O, plot, and cantera
 https://github.com/Combustion-Zhen/pyutils
 
-cantera
-https://github.com/Cantera/cantera
-
-numpy
-https://numpy.org/
-
-scipy
-https://www.scipy.org/
+[cantera](https://cantera.org/), [numpy](https://numpy.org/), [scipy](https://www.scipy.org/)
 
 # Get start
 Please check the /examples folder for two cases of hydrogen and methane, comparing between model predictions and DNS results.
