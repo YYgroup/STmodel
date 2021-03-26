@@ -2,7 +2,6 @@ import os
 import numpy as np
 import json
 import pyutils.filename as fn
-from scipy.optimize import curve_fit
 import pyutils.ctutils.mechanisms.select as ms
 import STmodel.model.st as stm
 

@@ -13,6 +13,8 @@
 # ignore output
 *.swp
 *.pyc
+# ignore flame solutions
+*.xml
 
 *.DS_Store
 
