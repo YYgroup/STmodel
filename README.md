@@ -24,7 +24,7 @@ pyutils
 https://github.com/Combustion-Zhen/pyutils
 
 # Get start
-Please find expamples in /examples for two hydrogen and methane cases
+Please check the /examples folder
 
 /examples/hydrogen_Lu_2021 contains full procedure to run the model
 1. run driver_counterflow.py to get the laminar flame solutions for laminar flame parameters and tabulation
