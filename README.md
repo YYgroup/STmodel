@@ -1,7 +1,7 @@
 # STmodel
 A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions
 
-Model predictions on turbulent burning velocity of lean hydrogen flames at different pressures, with DNS data from [Lu & Yang, 2020](https://doi.org/10.1016/j.proci.2020.06.162)
+Model predictions on turbulent burning velocity of lean hydrogen flames at different pressures, with DNS data from [Lu & Yang, 2021](https://doi.org/10.1016/j.proci.2020.06.162)
 <p align="center">
 <img src="./data/fig/fig_model_st_Lu2020.png" width="360">
 </p>
