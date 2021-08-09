@@ -23,10 +23,18 @@ sr = np.zeros(nx)
 
 ## select a condition T, p, phi
 unburnt = 'T-300_p-10_phi-0.6'
+
 ## get the data
 d = case.get_case_data(unburnt)
+
 ## get the reactant information
 r = case.get_reactant(unburnt)
+## get the reactant object with input directly
+#fuel = {'H2':1}
+#oxidizer = {'O2':1, 'N2':3.76}
+#chemistry = 'h2_Burke.cti'
+#r = stm.Reactant(unburnt, fuel, oxidizer, chemistry)
+
 ## get the model object
 m = stm.Model(r)
 

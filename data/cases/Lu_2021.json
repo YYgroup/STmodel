@@ -1,5 +1,6 @@
 {
     "fuel":"hydrogen",
+    "oxidizer":{"O2":1., "N2":3.76},
     "mechanism":"hydrogen_Burke_N2.cti",
     "reference":"Lu_2021_PCI",
     "configuration":"planar",
