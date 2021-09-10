@@ -38,4 +38,4 @@ Then the necessary data are stored in laminar_info.npz and stretch_factor_table.
 Later calls of the model only take negligible time to do algebraic calculations.
 
 # Cite
-Zhen Lu and Yue Yang, A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, Combustion and Flame, 2021, under review. [arXiv](https://arxiv.org/abs/2103.11337)
+Zhen Lu and Yue Yang, A predictive model of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, 2021, under review. [arXiv](https://arxiv.org/abs/2103.11337)
