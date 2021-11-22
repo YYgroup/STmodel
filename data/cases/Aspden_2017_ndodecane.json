@@ -1,0 +1,14 @@
+{
+    "fuel":"ndodecane",
+    "mechanism":"ndodecane_sk53.cti",
+    "reference":"Aspden_2017_PCI",
+    "configuration":"planar",
+    "cases":{
+        "T-298_p-1_phi-0.7":[
+            {"ur":1.00, "lr":1.0, "sr":1.06, "sr_std":0.05},
+            {"ur":2.52, "lr":1.0, "sr":1.08, "sr_std":0.06},
+            {"ur":5.25, "lr":1.0, "sr":1.15, "sr_std":0.15},
+            {"ur":10.9, "lr":1.0, "sr":1.43, "sr_std":0.28}
+        ]
+    }
+}

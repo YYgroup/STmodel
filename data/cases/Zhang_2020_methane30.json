@@ -1,0 +1,14 @@
+{
+    "fuel":"methane30",
+    "mechanism":"FFCM-1.cti",
+    "reference":"Zhang_2020_IJHE",
+    "configuration":"jet",
+    "cases":{
+        "T-298_p-1_phi-0.8":[
+            {"ur":1.77, "lr":6.12, "sr":5.43, "sr_std":1.00},
+            {"ur":2.49, "lr":6.14, "sr":6.09, "sr_std":1.47},
+            {"ur":4.20, "lr":6.24, "sr":7.55, "sr_std":1.20},
+            {"ur":5.78, "lr":6.52, "sr":8.57, "sr_std":0.96}
+        ]
+    }
+}
