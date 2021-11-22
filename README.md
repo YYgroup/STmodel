@@ -11,7 +11,7 @@ Validation cases:
 <img src="./data/fig/fig_diagram.png" width="560">
 </p>
 
-Model predictions for the 285 cases:
+Model predictions for the 490 cases:
 <p align="center">
 <img src="./data/fig/fig_st_predictions.png" width="360">
 </p>
@@ -38,4 +38,4 @@ Then the necessary data are stored in laminar_info.npz and stretch_factor_table.
 Later calls of the model only take negligible time to do algebraic calculations.
 
 # Cite
-Zhen Lu and Yue Yang, Model development and assessment for the turbulent burning velocity over a wide range of conditions, 2021, under review. [arXiv](https://arxiv.org/abs/2103.11337)
+Zhen Lu and Yue Yang, Modeling of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, 2021, under review. [arXiv](https://arxiv.org/abs/2103.11337)
