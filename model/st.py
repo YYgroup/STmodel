@@ -1,9 +1,10 @@
+import os
 import numpy as np
 import scipy.special as sp
 import pyutils.filename as fn
 import pyutils.ctutils.flame as ctf
+import stmodels.LASTFS.table as stt
 import pyutils.ctutils.mechanisms.select as ms
-import STmodel.model.table as stt
 
 class Model():
     
@@ -53,10 +54,7 @@ class Model():
 
         growth_rate = xi + self.C_lr * np.log(lr)
 
-        #I0_p = self.stretch_factor(1.0, 1.0)
-        I0_p = self.reactant.stretch_factor_table.retrieve(1.0/self.reactant.Le)
-
-        C = I0_p * self.C0()
+        C = self.C0()
 
         #Re = self.Re(ur, lr)
         #truncation_time = 1. - np.exp( - C
@@ -87,7 +85,8 @@ class Model():
     def Ka(self, ur, lr):
 
         def Ka_Bradley(ur, lr):
-            return 0.157 * np.power(ur, 1.5) / np.power(lr, 0.5) / np.power(self.reactant.ReF, 0.5)
+            #return 0.157 * np.power(ur, 1.5) / np.power(lr, 0.5) / np.power(self.reactant.ReF, 0.5)
+            return 0.25 * np.power(ur, 1.5) / np.power(lr, 0.5) / np.power(self.reactant.ReF, 0.5)
 
         def Ka_Lu(ur, lr):
             return 0.1 * ur / lr
@@ -108,6 +107,8 @@ class Model():
 
     def C0(self):
 
+        I0 = self.reactant.stretch_factor_table.retrieve(1.0/self.reactant.Le)
+
         def C0_const():
             return self.C
 
@@ -117,11 +118,15 @@ class Model():
         def C0_instability():
             return self.C * (1.0-self.reactant.sigma) / self.reactant.Le
 
+        def C0_scaling():
+            return self.C * (1.0-self.reactant.sigma) * np.sqrt(self.reactant.ReF) / 3.0 / self.reactant.Le
+
         switch = {'const':C0_const,
                   'Le':C0_Le,
-                  'instability':C0_instability}
+                  'instability':C0_instability,
+                  'scaling':C0_scaling}
 
-        return switch.get(self.type_C0)()
+        return I0 * switch.get(self.type_C0)()
 
 class Reactant():
 
@@ -190,7 +195,8 @@ class Reactant():
 
             fuels, mech = ms.get_fuel_mech(fuel, chemistry)
 
-            try:
+            #try:
+            if os.path.isfile(file_name):
 
                 data = np.load(file_name)
 
@@ -199,25 +205,35 @@ class Reactant():
                 self.ReF = data['ReF']
                 self.laminar_flame_speed = data['sc']
 
-            except FileNotFoundError:
+                self.thermal_thickness = data['dl']
+                self.diffusive_thickness = data['lf']
+                self.Ze = data['Ze']
+
+            #except FileNotFoundError:
+            else:
 
                 solution = '{0}/{0}.xml'.format(unburnt)
 
-                self.flame_state = ctf.FreeFlameState(solution, mech, fuels, oxidizer)
+                flame_state = ctf.FreeFlameState(solution, mech, fuels, oxidizer)
 
-                self.Le = self.flame_state.Le_eff(self.type_Le)
+                self.Le = flame_state.Le_eff(self.type_Le)
+                self.sigma = flame_state.expansion()
+                self.ReF = flame_state.Re()
+                self.laminar_flame_speed = flame_state.consumption_speed()
 
-                self.sigma = self.flame_state.expansion()
-
-                self.ReF = self.flame_state.Re()
-
-                self.laminar_flame_speed = self.flame_state.consumption_speed()
+                self.Ze = flame_state.Ze()
+                self.thermal_thickness = flame_state.thermal_thickness()
+                self.diffusive_thickness = flame_state.diffusive_thickness()
 
                 np.savez(file_name,
                          Le=self.Le,
                          sigma=self.sigma,
                          ReF=self.ReF,
-                         sc=self.laminar_flame_speed)
+                         sc=self.laminar_flame_speed,
+                         dl=self.thermal_thickness,
+                         lf=self.diffusive_thickness,
+                         Ze=self.Ze
+                         )
 
             # get stretch factor table
 

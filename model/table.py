@@ -1,3 +1,4 @@
+import os
 import glob
 import numpy as np
 import pyutils.filename as fn
@@ -40,11 +41,13 @@ class FlameStretchTable(OneDimTable):
         table_name='stretch_factor_table.npy'
         table_file = '{0}/{1}'.format(unburnt, table_name)
         
-        try:
+        #try:
+        if os.path.isfile(table_file):
 
             data = np.load(table_file)
 
-        except FileNotFoundError:
+        #except FileNotFoundError:
+        else:
 
             fuels, mech = ms.get_fuel_mech(fuel, chemistry)
 
@@ -86,6 +89,7 @@ class FlameStretchTable(OneDimTable):
                 solution = '{}/{}.xml'.format(unburnt, flame_name)
 
                 fs_a = ctf.CounterflowPremixedFlameState(solution, mech, fuels, oxidizer, fs_0.T_peak())
+                #fs_a = ctf.CounterflowPremixedFlameState(solution, mech, fuels, oxidizer)
             
                 array_a[0,i] = fs_a.strain_rate() * df / sc
                 array_a[1,i] = fs_a.consumption_speed() / sc
