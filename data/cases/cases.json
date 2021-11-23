@@ -1,0 +1,17 @@
+{
+    "hydrogen":[
+        "Lu_2020"
+    ],
+    "methane":[
+        "Zhang_2020_methane"
+    ],
+    "methane30":[
+        "Zhang_2020_methane30"
+    ],
+    "methane60":[
+        "Zhang_2020_methane60"
+    ],
+    "ndodecane":[
+        "Aspden_2017_ndodecane"
+    ]
+}
