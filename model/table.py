@@ -133,20 +133,24 @@ class FlameStretchTable(OneDimTable):
 
         return
 
-    def plot_Markstein_fit(self, fig_name, npts=5, xlim=[0., 1.], ylim=[0., 2.]):
+    def plot_Markstein_fit(self, fig_name, npts=5, 
+                           xlim=[0., 1.], ylim=[0., 2.], 
+                           xscale='linear'):
         
         config = fg.PlotConfig(config_name="slides_single")
         fig, ax = config.get_simple()
 
         ax.plot(self.x, self.y, 'ok', label='Table')
 
-        x = np.linspace(0, 1)
+        x = np.linspace(xlim[0], xlim[-1])
         y = 1 - self.Ma(npts)*x
 
         ax.plot(x, y, '--r', label='Linear')
 
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
+
+        ax.set_xscale(xscale)
 
         ax.set_xlabel(r'$\mathrm{Ka}$')
         ax.set_ylabel(r'$I_0$')
