@@ -118,7 +118,6 @@ class FlameStretchTable(OneDimTable):
         fig, ax = config.get_simple()
 
         ax.plot(self.x, self.y, 'ok')
-        ax.plot(self.x, self.y, '--r')
 
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
@@ -139,18 +138,20 @@ class FlameStretchTable(OneDimTable):
         config = fg.PlotConfig(config_name="slides_single")
         fig, ax = config.get_simple()
 
-        ax.plot(self.x, self.y, 'ok')
+        ax.plot(self.x, self.y, 'ok', label='Table')
 
         x = np.linspace(0, 1)
         y = 1 - self.Ma(npts)*x
 
-        ax.plot(x, y, '--r')
+        ax.plot(x, y, '--r', label='Linear')
 
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
 
         ax.set_xlabel(r'$\mathrm{Ka}$')
         ax.set_ylabel(r'$I_0$')
+
+        ax.legend(frameon=False)
 
         fig.savefig(fig_name, dpi=400)
 
