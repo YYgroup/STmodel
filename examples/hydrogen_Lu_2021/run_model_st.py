@@ -74,7 +74,8 @@ ax.text(10, 1,
         'Lu \& Yang, 2021\n'
         +r'H$_2$/Air, $\phi=0.6$')
 
-ax.tick_params(which='major', direction='in', bottom=True, top=True, left=True, right=True)
+ax.tick_params(which='major', direction='in', 
+               bottom=True, top=True, left=True, right=True)
 
 ax.set_xlabel(r'$u^\prime/s_L^0$')
 ax.set_ylabel(r'$s_T/s_L^0$')
