@@ -106,7 +106,8 @@ class Model():
 
     def C0(self):
 
-        I0 = self.reactant.stretch_factor_table.retrieve(1.0/self.reactant.Le)
+        #I0 = self.reactant.stretch_factor_table.retrieve(1.0/self.reactant.Le)
+        I0 = self.reactant.stretch_factor_table.retrieve(np.sqrt(self.reactant.p)/self.reactant.Le)
 
         def C0_const():
             return self.C
