@@ -37,5 +37,7 @@ Then the necessary data are stored in laminar_info.npz and stretch_factor_table.
 Later calls of the model only take negligible time to do algebraic calculations.
 
 # Refs:
+
 Zhen Lu and Yue Yang, Modeling pressure effects on the turbulent burning velocity for lean hydrogen/air premixed combustion, Proceedings of the Combustion Institute, 38, 2901-2908, 2021. [arXiv](https://arxiv.org/abs/1911.10815) [PCI](https://doi.org/10.1016/j.proci.2020.06.162)
+
 Zhen Lu and Yue Yang, Modeling of the turbulent burning velocity for planar and Bunsen flames over a wide range of conditions, Acta Mechanica Sinica, 38, 121504, 2022. [arXiv](https://arxiv.org/abs/2103.11337) [AMS](https://doi.org/10.1007/s10409-021-09027-3)
